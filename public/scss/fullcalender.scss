@@ -1,0 +1,299 @@
+//
+// Full Calendar
+//
+@mixin icon-font($content, $font-size) {
+    content: $content;
+    font-family: $icon-font-family;
+    font-size: $font-size;
+}
+
+
+.fc-header-toolbar {
+    display: none;
+}
+
+.fc-scroller {
+    height: auto !important;
+}
+
+.fc {
+    th {
+        text-transform: uppercase;
+    }
+
+
+
+    div.fc-row {
+        margin-right: 0;
+        border: 0;
+    }
+
+    button {
+        .fc-icon {
+            top: -5px;
+        }
+    }
+}
+
+.fc-unthemed {
+    td.fc-today {
+        background-color: transparent;
+
+        span {
+            color: $orange;
+        }
+    }
+}
+
+.fc-event {
+    padding: 0;
+    border: 0;
+
+    .fc-title {
+        padding: .4rem .5rem;
+        display: block;
+        color: $white;
+        @include text-truncate();
+        font-weight: $font-weight-bold;
+    }
+
+    .fc-time {
+        float: left;
+        background: rgba($black,0.2);
+        padding: 2px 6px;
+        margin: 0 0 0 -1px;
+    }
+}
+
+.fc-view {
+    &, & > table {
+        border: 0;
+        overflow: hidden;
+    }
+    & > table {
+        & > tbody {
+            & > tr {
+                .ui-widget-content {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.fc-body {
+    border: 0;
+}
+
+.fc-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+
+    &:hover {
+        color: theme-color("primary");
+    }
+}
+
+.fc-button {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+}
+
+
+// Main Calendar
+
+.calendar {
+    z-index: 0;
+    td, th {
+        border-color: lighten($table-border-color,2%);
+    }
+
+    .fc-toolbar {
+        display: none;
+    }
+
+    .fc-day-number {
+        padding: .5rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        @include media-breakpoint-up(sm) {
+            color: lighten($body-color,10%);
+        }
+    }
+    .fc-day-header {
+        text-align: left;
+    }
+    .fc-day-grid-event {
+        margin: 1px 9px;
+    }
+}
+
+
+// Main Calendar Seasonal headers
+
+[data-calendar-month] {
+    background-size: contain;
+    @include transition(background-image 300ms);
+}
+
+// [data-calendar-month="0"] {
+//     background-image: url('../img/calendar/january.jpg');
+// }
+// [data-calendar-month="1"] {
+//     background-image: url('../img/calendar/february.jpg');
+// }
+// [data-calendar-month="2"] {
+//     background-image: url('../img/calendar/march.jpg');
+// }
+// [data-calendar-month="3"] {
+//     background-image: url('../img/calendar/april.jpg');
+// }
+// [data-calendar-month="4"] {
+//     background-image: url('../img/calendar/may.jpg');
+// }
+// [data-calendar-month="5"] {
+//     background-image: url('../img/calendar/june.jpg');
+// }
+// [data-calendar-month="6"] {
+//     background-image: url('../img/calendar/july.jpg');
+// }
+// [data-calendar-month="7"] {
+//     background-image: url('../img/calendar/august.jpg');
+// }
+// [data-calendar-month="8"] {
+//     background-image: url('../img/calendar/september.jpg');
+// }
+// [data-calendar-month="9"] {
+//     background-image: url('../img/calendar/october.jpg');
+// }
+// [data-calendar-month="10"] {
+//     background-image: url('../img/calendar/november.jpg');
+// }
+// [data-calendar-month="11"] {
+//     background-image: url('../img/calendar/december.jpg');
+// }
+
+
+// Calendar used inside a card
+
+.card-calendar {
+    .card-header {
+        border-bottom: 0;
+    }
+
+    table {
+        background: transparent;
+        tr {
+            & > td {
+                &:first-child {
+                    border-left-width: 0;
+                }
+                &:last-child {
+                    border-right-width: 0;
+                }
+            }
+        }
+    }
+}
+
+// Widget
+
+.widget-calendar {
+    position: relative;
+    z-index: 0;
+
+    td, th {
+        border-color: transparent;
+        text-align: center;
+    }
+
+    .fc-toolbar {
+        margin-top: 1.25rem;
+    }
+
+    .fc-day-number {
+        text-align: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .fc {
+        th {
+            padding: .75rem .5rem;
+        }
+    }
+}
+
+.btn-neutral {
+    color: #5e72e4;
+}
+
+.btn-group-toggle {
+    > .btn,
+    > .btn-group > .btn {
+      margin-bottom: 0; // Override default `<label>` value
+  
+      input[type="radio"],
+      input[type="checkbox"] {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+      }
+    }
+}
+
+.btn-group-colors {
+    & > .btn {
+        box-shadow: none;
+        border-radius: 50% !important;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin-right: .5rem;
+        margin-bottom: .25rem;
+        position: relative;
+
+        &:not([class*="bg-"]) {
+            border-color: $gray-100 !important;
+        }
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 28px;
+            color: $white;
+            transform: scale(0);
+            opacity: 0;
+            @include icon-font('\2713', 14px);
+            @include transition(transform 200ms, opacity 200ms);
+        }
+
+        &.btn:not([class*="bg-"]) {
+            border: 1px solid darken($input-border-color, 5%);
+
+            &:before {
+                color: $body-color;
+            }
+        }
+
+        &.active {
+            &:before {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+

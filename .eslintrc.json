@@ -1,0 +1,27 @@
+{
+    "extends": "airbnb",
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true,
+        "es6": true
+      },
+    "parser": "babel-eslint",
+    "rules": {
+        "linebreak-style":0,
+        "consistent-return":0,
+        "global-require":0,
+        "no-console":0,
+        "no-underscore-dangle":0,
+        "react/prefer-stateless-function":0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-uses-vars": 2,
+        "react/prop-types": 0,
+        "react/destructuring-assignment":0,
+        "react/no-access-state-in-setstate": 0,
+        "import/prefer-default-export": 0,
+        "max-len": 0,
+        "object-curly-newline": 0,
+        "react/jsx-one-expression-per-line": 0
+    }
+}

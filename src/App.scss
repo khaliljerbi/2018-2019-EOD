@@ -1,0 +1,20 @@
+// Import Main styles for this application
+@import '../public/scss/style.scss';
+
+.nav-icon {
+    color: #fff!important;
+}
+
+.marker-ambulance {
+    background-image: url('/static/images/ambulance.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+.motif_input {
+  margin-top: 30; 
+  margin-left: -20 
+}

@@ -1,0 +1,12 @@
+export const GET_ALL = 'GET_ALL';
+export const ADD_FICHE = 'ADD_FICHE';
+export const GET_FICHE = 'GET_FICHE';
+export const FICHE_LOADING = 'FICHE_LOADING';
+export const SET_FILE_PROGRESS = 'SET_FILE_PROGRESS';
+export const PENDING_FICHE = 'PENDING_FICHE';
+export const FICHE_END = 'FICHE_END';
+export const PENDING_END = 'PENDING_END';
+export const GET_ALL_PENDING_FICHES = 'GET_ALL_PENDING_FICHES,';
+export const GET_MED_PARM = 'GET_MED_PARM';
+export const GET_ERROR = 'GET_ERROR';
+export const FICHE_AFFECT = 'FICHE_AFFECT';

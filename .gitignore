@@ -1,0 +1,32 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/server/node_modules
+/server/config/dev.js
+/server/config/node_test.js
+/node_modules
+package-lock.json
+.vscode
+# testing
+/coverage
+/server/jest.config.js
+/server/tests
+#private
+/server/server.crt
+/server/server.csr
+/server/server.key
+# production
+/build
+
+# misc
+.DS_Store
+.idea
+.env.local
+.env.development.local
+.env.development
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
